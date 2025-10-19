@@ -2,8 +2,9 @@ package tests;
 
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Tag;
-import page.components.CalendarComponent;
-import page.components.RegistrationResultsModal;
+import pages.comonents.CalendarComponent;
+import pages.comonents.RegistrationResultsModal;
+
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;

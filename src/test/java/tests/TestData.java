@@ -1,6 +1,7 @@
-package tests.pageobjectmodel;
+package tests;
 
 import com.github.javafaker.Faker;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.TextStyle;

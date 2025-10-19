@@ -2,17 +2,16 @@ package helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
+import io.qameta.allure.selenide.LogType;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-
 import static com.codeborne.selenide.Selenide.sessionId;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static io.qameta.allure.selenide.LogType.BROWSER;
-import static org.openqa.selenium.logging.LogType.BROWSER;
+
 
 public class Attach {
 
@@ -34,7 +33,7 @@ public class Attach {
     public static void browserConsoleLogs() {
         attachAsText(
                 "Browser console logs",
-                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
+                String.join("\n", Selenide.getWebDriverLogs(String.valueOf(LogType.BROWSER)))
         );
     }
 
