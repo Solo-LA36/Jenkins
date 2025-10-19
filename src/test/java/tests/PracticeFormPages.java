@@ -128,15 +128,11 @@ public class PracticeFormPages {
     public PracticeFormPages verifyResultModalAppears() {
         registrationResultsModal.verifyModalAppears();
 
+
         return this;
     }
     public PracticeFormPages verifyResult(String key, String value) {
         registrationResultsModal.verifyResult(key, value);
-
-        return this;
-    }
-    public PracticeFormPages verifyResultModalAppearsNeg() {
-        registrationResultsModal.verifyModalAppearsNegativ();
 
         return this;
     }

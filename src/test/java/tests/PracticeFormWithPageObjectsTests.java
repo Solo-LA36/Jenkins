@@ -1,16 +1,36 @@
 package tests;
 
+
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import helpers.Attach;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
-
-@Tag("demoqa")
 public class PracticeFormWithPageObjectsTests extends TestBase {
     PracticeFormPages practiceFormPages = new PracticeFormPages();
     TestData testData = new TestData();
 
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
+        Selenide.closeWebDriver();
+    }
+
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
+
     @Test
+    @Tag("demoqa")
     void fillFormTest() {
         practiceFormPages.openPage()
                 .removeAds()
